@@ -4,15 +4,54 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            Init();
+            return;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool Isinitialized { get; set; }
+    public int CurrentScore { get; set; }
+    private const string highScoreKey = "HighScore";
+
+    public int HighScore
     {
-        
+        get
+        {
+            return PlayerPrefs.GetInt(highScoreKey, 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt(highScoreKey, value);
+        }
     }
+
+    private void Init()
+    {
+        Isinitialized = false;
+        CurrentScore = 0;
+    }
+    private const string MainMenu = "MainMenu";
+    private const string Gameplay = "Gameplay";
+
+    public void GotoMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(MainMenu);
+    }
+    public void GotoGameplay()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(Gameplay);
+    }
+
 }
