@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         CurrentScore = 0;
     }
     private const string MainMenu = "MainMenu";
-    private const string Gameplay = "Gameplay";
+    private const string Gameplay = "GamePlayScene";
 
     public void GotoMainMenu()
     {
