@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 240284881}
   - component: {fileID: 240284880}
   - component: {fileID: 240284879}
-  - component: {fileID: 240284878}
+  - component: {fileID: 240284883}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -244,18 +244,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &240284878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240284877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5decced723fb43946a32e9594baa5324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &240284879
 Rigidbody2D:
   serializedVersion: 4
@@ -361,6 +349,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240284883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240284877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5decced723fb43946a32e9594baa5324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &342187305
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,14 +385,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342187305}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 240284882}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &342187307
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -651,12 +651,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasGameFinished: 0
-  _levelSpeed: 050000000a000000140000003200000064000000f4010000
-  _levelMax: 190000004b000000c8000000f4010000e803000080969800
+  _levelSpeed: 0a000000140000003200000064000000f4010000e8030000
+  _levelMax: 190000004b000000c8000000e803000000ca9a3b
   _scoreTest: {fileID: 1834507548}
   _obstaclePrefab: {fileID: 787816321532694407, guid: a529b7dd7d4b28543acad029ac3202a2, type: 3}
-  _spawnX: 0
-  _spawnY: 0
+  _spawnX: 9.2
+  _spawnY: 20
   _loseclip: {fileID: 8300000, guid: e166d8e9d4f5f244eadbf79e6ebecbaa, type: 3}
 --- !u!1 &1619410109
 GameObject:

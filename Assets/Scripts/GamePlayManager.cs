@@ -7,6 +7,7 @@ using TMPro;
 
 public class GamePlayManager : MonoBehaviour
 {
+    
     #region START
 
     public bool hasGameFinished;
@@ -22,7 +23,7 @@ public class GamePlayManager : MonoBehaviour
         score = 0;
         currentLevel = 0;
         scoreSpeed = _levelSpeed[currentLevel];
-        _scoreTest.text = ((int)score).ToString();
+        _scoreTest.text = ((int)score).ToString(); 
 
         for (int i=0;i<8;i++)
         {
@@ -31,7 +32,7 @@ public class GamePlayManager : MonoBehaviour
     }
 
     #endregion
-
+    
     #region SCORE
 
     private float score;
@@ -42,14 +43,14 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] private TMP_Text _scoreTest;
     [SerializeField] private GameObject _obstaclePrefab;
     [SerializeField] private float _spawnX, _spawnY;
-
+    
     private void Update()
     {
         if (hasGameFinished) return;
         score += scoreSpeed * Time.deltaTime;
         _scoreTest.text = ((int)score).ToString();
 
-        if (score> _levelMax[Mathf.Clamp(currentLevel,0,_levelMax.Count)])
+        if (score > _levelMax[Mathf.Clamp(currentLevel,0,_levelMax.Count)])
         {
             currentLevel = Mathf.Clamp(currentLevel + 1, 0, _levelMax.Count);
             SpawnObstacle();
@@ -57,12 +58,13 @@ public class GamePlayManager : MonoBehaviour
         }
 
     }
+    
     private void SpawnObstacle()
     {
         Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-_spawnX, _spawnX), UnityEngine.Random.Range(-_spawnY, _spawnY), 0f);
         RaycastHit2D hit = Physics2D.CircleCast(spawnPos, 1f, Vector2.zero);
         bool canSpawn = hit;
-
+        
         while(canSpawn)
         {
             spawnPos = new Vector3(UnityEngine.Random.Range(-_spawnX, _spawnX), UnityEngine.Random.Range(-_spawnY, _spawnY), 0f);
@@ -71,7 +73,7 @@ public class GamePlayManager : MonoBehaviour
         }
         Instantiate(_obstaclePrefab, spawnPos, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 37) * 10f));
     }
-
+    
     #endregion
 
     #region GAME_OVER
@@ -95,4 +97,5 @@ public class GamePlayManager : MonoBehaviour
         GameManager.Instance.GotoMainMenu();
     }
     #endregion
+    
 }

@@ -25,11 +25,11 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.CompareTag("Side"))
         {
-            moveDirection.x += -1f;
+            moveDirection.x *= -1f;
         }
         if (collision.CompareTag("Top"))
         {
-            moveDirection.y += -1f;
+            moveDirection.y *= -1f;
         }
     }
 

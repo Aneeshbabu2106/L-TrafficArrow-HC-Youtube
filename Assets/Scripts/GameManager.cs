@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,16 +43,18 @@ public class GameManager : MonoBehaviour
         Isinitialized = false;
         CurrentScore = 0;
     }
-    private const string MainMenu = "MainMenu";
-    private const string Gameplay = "GamePlayScene";
+    private string MainMenu = "MainMenu";
+    private string Gameplay = "GamePlayScene";
 
     public void GotoMainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(MainMenu);
+        SceneManager.LoadScene(MainMenu);
     }
     public void GotoGameplay()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(Gameplay);
+        Debug.Log("called");
+        SceneManager.LoadScene(1);
+        Debug.Log("ended");
     }
 
 }
