@@ -10,14 +10,14 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        moveDirection = Vector2.up;
+        moveDirection = Vector2.right;
     }
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(-mousePos.x, mousePos.y);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             moveDirection = (mousePos2D - (Vector2)transform.position).normalized;
 
             float cosAngle = Mathf.Acos(moveDirection.x) * Mathf.Rad2Deg;

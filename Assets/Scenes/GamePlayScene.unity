@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5decced723fb43946a32e9594baa5324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveSpeed: 8
 --- !u!1 &342187305
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGameFinished: 0
   _levelSpeed: 0a000000140000003200000064000000f4010000e8030000
-  _levelMax: 190000004b000000c8000000e803000000ca9a3b
+  _levelMax: 3200000064000000f4010000d00700001027000000ca9a3b
   _scoreTest: {fileID: 1834507548}
   _obstaclePrefab: {fileID: 787816321532694407, guid: a529b7dd7d4b28543acad029ac3202a2, type: 3}
   _spawnX: 9.2
